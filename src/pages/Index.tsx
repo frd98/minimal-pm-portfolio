@@ -32,7 +32,7 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="#"
+                href="https://istigrow.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-80"
