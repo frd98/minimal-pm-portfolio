@@ -1,5 +1,11 @@
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 
+const articles = [
+  { title: "The Rise of Vibe Coding: How PMs are Building Products with AI", date: "April 2026" },
+  { title: "Scaling a Food Brand with Minimalist Tech", date: "March 2026" },
+  { title: "Why Every PM Should Understand GitHub (Even if they can't code)", date: "February 2026" },
+];
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -67,7 +73,7 @@ const Index = () => {
                 </p>
               </div>
               <a
-                href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Paket%20Isi%2025"
+                href="https://wa.me/6285157109118?text=Halo%20saya%20ingin%20pesan%20Paket%20Isi%2025"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-lasuko px-4 py-2.5 text-sm font-medium text-lasuko-foreground transition-opacity hover:opacity-85"
@@ -86,7 +92,7 @@ const Index = () => {
                 </p>
               </div>
               <a
-                href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Paket%20Hemat%20Isi%2010"
+                href="https://wa.me/6285157109118?text=Halo%20saya%20ingin%20pesan%20Paket%20Hemat%20Isi%2010"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-lasuko px-4 py-2.5 text-sm font-medium text-lasuko-foreground transition-opacity hover:opacity-85"
@@ -98,23 +104,50 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Contact */}
-        <section className="mb-16">
+        {/* Notes & Insights */}
+        <section className="mb-24">
+          <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-4">
+            Writing
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-8">
+            Notes & Insights
+          </h2>
+          <div className="space-y-6">
+            {articles.map((article, i) => (
+              <a
+                key={i}
+                href="#"
+                className="block group"
+              >
+                <p className="text-xs text-muted-foreground mb-1">{article.date}</p>
+                <h3 className="text-lg font-semibold leading-snug group-hover:underline underline-offset-4 decoration-1">
+                  {article.title}
+                </h3>
+                {i < articles.length - 1 && <div className="border-b mt-6" />}
+              </a>
+            ))}
+          </div>
           <a
             href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-80"
+            className="inline-flex items-center gap-1 mt-8 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
-            Get in Touch <ArrowUpRight className="h-4 w-4" />
+            View All Articles <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </section>
 
         {/* Footer */}
-        <footer className="pt-8 border-t">
+        <footer className="pt-8 border-t flex items-center justify-between">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} · Built with care.
+            © {new Date().getFullYear()} Fareed
           </p>
+          <a
+            href="https://www.linkedin.com/in/i-am-fareed/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            LinkedIn <ArrowUpRight className="inline h-3 w-3" />
+          </a>
         </footer>
       </div>
     </div>
