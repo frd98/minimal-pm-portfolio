@@ -50,6 +50,7 @@ export default {
         lasuko: {
           DEFAULT: "hsl(var(--lasuko))",
           foreground: "hsl(var(--lasuko-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
