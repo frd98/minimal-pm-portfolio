@@ -9,33 +9,33 @@ const articles = [
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-2xl px-6 py-24 sm:py-32">
+      <div className="mx-auto max-w-2xl px-4 sm:px-6 py-16 sm:py-32">
         {/* Hero */}
-        <section className="mb-24">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-6">
+        <section id="hero" className="mb-20 sm:mb-24">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-6">
             Product Manager<br />& Builder.
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg">
             Building products with AI, scaling brands, and documenting the journey.
           </p>
         </section>
 
         {/* Featured Project */}
-        <section className="mb-24">
+        <section id="projects" className="mb-20 sm:mb-24">
           <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-4">
             Featured Project
           </p>
-          <div className="rounded-xl border bg-card p-6 sm:p-8">
+          <div className="rounded-xl border bg-card p-5 sm:p-8">
             <h2 className="text-xl font-semibold mb-2">IstiGrow</h2>
             <p className="text-muted-foreground mb-6">
               A PWA Dzikr Counter built with Vibe Coding.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3">
               <a
                 href="https://istigrow.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-80"
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-80"
               >
                 View Live <ArrowUpRight className="h-4 w-4" />
               </a>
@@ -43,7 +43,7 @@ const Index = () => {
                 href="https://github.com/frd98/IstiGrow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
               >
                 GitHub Repository <ArrowUpRight className="h-4 w-4" />
               </a>
@@ -52,7 +52,7 @@ const Index = () => {
         </section>
 
         {/* Lasuko Section */}
-        <section className="mb-24">
+        <section id="lasuko" className="mb-20 sm:mb-24">
           <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-4">
             Brand
           </p>
@@ -64,8 +64,7 @@ const Index = () => {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* Card 1 */}
-            <div className="rounded-xl border bg-card p-6 flex flex-col justify-between">
+            <div className="rounded-xl border bg-card p-5 sm:p-6 flex flex-col justify-between">
               <div>
                 <h3 className="text-lg font-semibold mb-2">Paket Isi 25</h3>
                 <p className="text-sm text-muted-foreground mb-6">
@@ -83,8 +82,7 @@ const Index = () => {
               </a>
             </div>
 
-            {/* Card 2 */}
-            <div className="rounded-xl border bg-card p-6 flex flex-col justify-between">
+            <div className="rounded-xl border bg-card p-5 sm:p-6 flex flex-col justify-between">
               <div>
                 <h3 className="text-lg font-semibold mb-2">Paket Hemat Isi 10</h3>
                 <p className="text-sm text-muted-foreground mb-6">
@@ -105,7 +103,7 @@ const Index = () => {
         </section>
 
         {/* Notes & Insights */}
-        <section className="mb-24">
+        <section id="writing" className="mb-20 sm:mb-24">
           <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-4">
             Writing
           </p>
@@ -120,7 +118,7 @@ const Index = () => {
                 className="block group"
               >
                 <p className="text-xs text-muted-foreground mb-1">{article.date}</p>
-                <h3 className="text-lg font-semibold leading-snug group-hover:underline underline-offset-4 decoration-1">
+                <h3 className="text-base sm:text-lg font-semibold leading-snug group-hover:underline underline-offset-4 decoration-1">
                   {article.title}
                 </h3>
                 {i < articles.length - 1 && <div className="border-b mt-6" />}
@@ -136,9 +134,9 @@ const Index = () => {
         </section>
 
         {/* Footer */}
-        <footer className="pt-8 border-t flex items-center justify-between">
+        <footer className="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Fareed
+            © {new Date().getFullYear()} Fareed · Built with Vibe Coding & AI.
           </p>
           <a
             href="https://www.linkedin.com/in/i-am-fareed/"
