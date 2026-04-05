@@ -1,4 +1,5 @@
 import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const articles = [
   { title: "The Rise of Vibe Coding: How PMs are Building Products with AI", date: "April 2026" },
@@ -125,12 +126,12 @@ const Index = () => {
               </a>
             ))}
           </div>
-          <a
-            href="#"
+          <Link
+            to="/blog"
             className="inline-flex items-center gap-1 mt-8 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             View All Articles <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
+          </Link>
         </section>
 
         {/* Footer */}
