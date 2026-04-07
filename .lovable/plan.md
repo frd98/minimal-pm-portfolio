@@ -1,16 +1,17 @@
 
 
-## Update Meta Tags to Production Domain
+## Fix Netlify SPA Routing (404 on Direct URLs)
 
-Update all URL references in `index.html` from `faridplayground.lovable.app` to `faridplayground.netlify.app`:
+### The Problem
+Netlify doesn't know your app uses client-side routing (React Router). When you visit `/admin-blog` directly, Netlify looks for a real file at that path, finds nothing, and returns a 404.
 
-### Changes (single file: `index.html`)
+### The Fix
+Add a `public/_redirects` file with a single rule that sends all requests to `index.html`, letting React Router handle the routing.
 
-1. `canonical` href
-2. `og:url` content
-3. `og:image` content
-4. `twitter:image` content
-5. JSON-LD `url` field
+**New file: `public/_redirects`**
+```
+/*    /index.html   200
+```
 
-All five references updated to use `https://faridplayground.netlify.app/`. No other files affected. GA4 tracking logic remains unchanged.
+That's it — one file, one line. After deploying this change, all routes (`/blog`, `/admin-blog`, `/blog/:slug`) will work when accessed directly or refreshed.
 
