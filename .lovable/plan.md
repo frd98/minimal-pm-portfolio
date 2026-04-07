@@ -1,19 +1,16 @@
 
 
-## Add Google Analytics (GA4) with Production-Only Filtering
+## Update Meta Tags to Production Domain
 
-### What we're doing
-Adding Google Analytics 4 tracking (G-B21J9M33YG) to the site, with a hostname check so it only fires on your production Netlify domain — not on Lovable preview/staging URLs.
+Update all URL references in `index.html` from `faridplayground.lovable.app` to `faridplayground.netlify.app`:
 
-### Implementation
+### Changes (single file: `index.html`)
 
-**File: `index.html`**
+1. `canonical` href
+2. `og:url` content
+3. `og:image` content
+4. `twitter:image` content
+5. JSON-LD `url` field
 
-Add the GA4 script tags inside `<head>`, wrapped in a small inline script that checks `window.location.hostname` does not include `lovable.app` before injecting the gtag scripts. This ensures zero tracking data from development/preview environments.
-
-The logic:
-1. Check if hostname contains `lovable.app` — if yes, skip loading GA entirely
-2. If not (i.e., production on Netlify), dynamically insert the standard gtag.js script and configure it with your Measurement ID
-
-No other files need changes. This is a single-file, ~15-line addition.
+All five references updated to use `https://faridplayground.netlify.app/`. No other files affected. GA4 tracking logic remains unchanged.
 
